@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>My chart.js</title>
+</head>
+<body>
+    <div class="container">
+        <canvas id="myChart"></canvas>
+
+    </div>
+    <script>
+        let myChart = document.getElementById('myChart').getContext('2d');
+
+        // Global Options
+        Chart.defaults.global.defaultFontFamily = 'Lato';
+        Chart.defaults.global.defaultFontSize = 18;
+        Chart.defaults.global.defaultFontColor = '#777';
+
+
+        let massPopChart = new Chart(myChart, {
+            type: 'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+            data :{
+                labels: ['Delhi', 'Hyderabad', 'Chennai', 'Mumbai', 'Banglore'],
+                datasets: [{
+                    labels: 'Populations',
+                    data: [617758,705781,520150,412354,635479],
+                    backgroundColor: ['pink','purple','violet','cyan','yellow']
+                }]
+            },
+            options:{
+                title: {
+                    display:true,
+                    text: 'Largest cities in India',
+                    fontSize: 25
+                },
+                legend: {
+                    position: 'right'
+                },
+                layout: {
+                    padding: {
+                        left:50,
+                        right:0,
+                        bottom:0,
+                        top:0
+                    }
+                }
+            }
+        }); 
+    </script>
+</body>
+</html> 
